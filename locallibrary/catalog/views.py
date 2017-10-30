@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views import generic
 
 from .models import Book, BookInstance, Author, Genre
 
@@ -28,3 +29,12 @@ def index(request):
             'num_garden_books': num_garden_books,
         },
     )
+
+# List of Books
+class BookListView(generic.ListView):
+    model = Book
+
+
+# Details of the books
+class BookDetailView(generic.DetailView):
+    model = Book

@@ -64,7 +64,7 @@ class Book(models.Model):
         """
         Returns the url to access a particular book instance.
         """
-        return reverse('book-detail', args=[str(self.id)])
+        return reverse('catalog:book-detail', args=[str(self.id)])
 
     def display_genre(self):
         """
