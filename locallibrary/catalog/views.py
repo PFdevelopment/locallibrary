@@ -33,8 +33,20 @@ def index(request):
 # List of Books
 class BookListView(generic.ListView):
     model = Book
+    # Adding pagination
+    paginate_by = 2
 
 
 # Details of the books
 class BookDetailView(generic.DetailView):
     model = Book
+
+# List of authors
+class AuthorListView(generic.ListView):
+    model = Author
+
+    paginate_by = 2
+    
+# Details of authors
+class AuthorDetailView(generic.DetailView):
+    model = Author

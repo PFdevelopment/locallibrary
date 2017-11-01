@@ -111,7 +111,7 @@ class Author(models.Model):
         """
         Returns the url to access a particular author instances.
         """
-        return reverse('author-detail', args=[str(self.id)])
+        return reverse('catalog:author-detail', args=[str(self.id)])
 
     def __str__(self):
         """

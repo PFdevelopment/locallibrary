@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  {% if author %}
+    <p><strong>First Name: </strong>{{ author.first_name }}</p>
+    <p><strong>Last Name: </strong>{{ author.last_name }}</p>
+    <p><strong>Birth Date: </strong>{{ author.date_of_birth }}</p>
+    {% if author.date_of_death %}
+      <p><strong>Death bird: </strong>{{ author.date_of_death }}</p>
+    {% endif %}
+  {% endif %}
+{% endblock content %}
