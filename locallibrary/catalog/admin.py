@@ -20,7 +20,7 @@ class BookAdmin(admin.ModelAdmin):
 @admin.register(BookInstance)
 class BookInstanceAdmin(admin.ModelAdmin):
     # list_display contains items to be displayed
-    list_display = ('book', 'status', 'due_back')
+    list_display = ('book', 'status', 'borrower', 'due_back')
     # list_filter contains items for filtering
     list_filter = ('status', 'due_back')
     # fieldsets creates the section of grouped items
@@ -29,7 +29,7 @@ class BookInstanceAdmin(admin.ModelAdmin):
             'fields': ('book', 'imprint', 'id')
         }),
         ('Availability', {
-            'fields': ('status', 'due_back')
+            'fields': ('status', 'due_back', 'borrower')
         })
     )
 

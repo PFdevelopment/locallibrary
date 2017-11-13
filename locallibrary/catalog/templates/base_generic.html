@@ -24,6 +24,20 @@
               <li><a href="{% url 'catalog:index' %}">Home</a></li>
               <li><a href="{% url 'catalog:books' %}">All Books</a></li>
               <li><a href="{% url 'catalog:authors' %}">All authors</a></li>
+
+              {% if user.is_authenticated %}
+                <li>User: {{ user.get_username }}</li>
+                <li><a href="{% url 'catalog:my-borrowed' %}">My Borrowed</a></li>
+                <li><a href="{% url 'account_logout' %}?next={{ request.path }}">Logout</a></li>
+                {% if user.is_staff %}
+                  <hr />
+                  <strong>Staff</strong><br />
+                  <li><a href="{% url 'catalog:borrowed' %}">All Borrowed Books</a></li>
+                {% endif %}
+              {% else %}
+                <li><a href="{% url 'account_login' %}?next={{ request.path }}">Login</a></li>
+              {% endif %}
+
             </ul>
           {% endblock sidebar %}
         </div>

@@ -8,7 +8,7 @@ from django.views import defaults as default_views
 urlpatterns = [
     # Redirect from root to catalog
     url(r'$^', RedirectView.as_view(url='/catalog/', permanent=True)),
-    # url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name='home'),
+    url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name='home'),
     url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name='about'),
 
     # Django Admin, use {% url 'admin:index' %}
