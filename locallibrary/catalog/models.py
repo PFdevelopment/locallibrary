@@ -129,7 +129,7 @@ class Author(models.Model):
         """
         String for representing the Model object.
         """
-        return "{0} {1}".format(self.first_name, self.last_name)
+        return "{0}, {1}".format(self.first_name, self.last_name)
 
 class Language(models.Model):
     """
